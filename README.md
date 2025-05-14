@@ -9,7 +9,7 @@
 - 🛠️ Supporting secure enterprise systems across multiple domains
 
 ## 🔨 Featured Projects
-- 🧩 [CI/CD Pipeline with Jenkins + Ansible](https://github.com/TaylorJPage/taylorjpage/tree/main.ci-cd-jenkins-ansible)
+- 🧩 [CI/CD Pipeline with Jenkins + Ansible](https://github.com/TaylorJPage/taylorjpage/tree/main/ci-cd-jenkins-ansible)
 - 🌐 [AWS VPC Blueprint with Terraform](https://github.com/TaylorJPage/taylorjpage/tree/main/aws-terraform-vpc)
 - 📈 [IT Ticket Analytics with Python](https://github.com/TaylorJPage/taylorjpage/tree/main/helpdesk-data-analysis)
 - 🧰 [PowerShell Scripts Collection](https://github.com/TaylorJPage/taylorjpage/tree/main/Powershell-scripts)
