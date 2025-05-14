@@ -1,16 +1,17 @@
-## Hi there 👋
+# 👋 Hi, I'm Taylor Page
 
-<!--
-**TaylorJPage/taylorjpage** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+💻 **Veteran IT Leader** | DevOps Engineer | System Administrator | Data Analyst
 
-Here are some ideas to get you started:
+🔧 I specialize in:
+- 🔄 Automating Infrastructure with Ansible & Terraform
+- ☁️ Deploying CI/CD pipelines in hybrid-cloud environments
+- 📊 Using data to drive decision making with BigQuery & Python
+- 🛠️ Supporting secure enterprise systems across multiple domains
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🔨 Featured Projects
+- 🧩 [CI/CD Pipeline with Jenkins + Ansible](https://github.com/taylorjpage/ci-cd-jenkins-ansible)
+- 🌐 [AWS VPC Blueprint with Terraform](https://github.com/taylorjpage/aws-terraform-vpc)
+- 📈 [IT Ticket Analytics with Python](https://github.com/taylorjpage/helpdesk-data-analysis)
+
+## 📫 Let's Connect
+- LinkedIn: [[linkedin.com/in/taylor-jonathan-page](https://www.linkedin.com/in/taylor-jonathan-page/)](#)
