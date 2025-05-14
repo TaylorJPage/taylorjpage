@@ -1,3 +1,15 @@
-# 🔄 CI/CD Pipeline with Jenkins & Ansible
+# 🌐 AWS Terraform VPC
 
-A project that demonstrates deploying a sample application using Jenkins and Ansible to multiple environments (dev, staging, production)...
+This Terraform module creates a basic AWS VPC environment with:
+
+- A custom VPC
+- One public and one private subnet
+- Internet Gateway
+- Routing for public internet access
+
+## 🚀 Usage
+
+```bash
+terraform init
+terraform plan
+terraform apply
