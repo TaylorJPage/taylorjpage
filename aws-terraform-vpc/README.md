@@ -1,0 +1,3 @@
+# 🔄 CI/CD Pipeline with Jenkins & Ansible
+
+A project that demonstrates deploying a sample application using Jenkins and Ansible to multiple environments (dev, staging, production)...
