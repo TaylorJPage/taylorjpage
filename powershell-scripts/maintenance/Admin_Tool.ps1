@@ -795,7 +795,7 @@ $HIPSCore = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine',$rCo
 $NIPS = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine',$rComp.name).OpenSubKey('SOFTWARE\WOW6432Node\McAfee\HIP').GetValue('NipsVersion')
 #$HIPS = (invoke-command -ComputerName $computername -ScriptBlock {Get-ItemProperty HKLM:\SOFTWARE\WOW6432Node\McAfee\HIP -Name VERSION}).VERSION
 $PolicyAgent = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine',$rComp.name).OpenSubKey('SOFTWARE\WOW6432Node\Network Associates\ePolicy Orchestrator\Application Plugins\PHCONTEN6000').GetValue('Version')
-$ACCMVer = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine',$rComp.name).OpenSubKey('SOFTWARE\WOW6432Node\Network Associates\ePolicy Orchestrator\Application Plugins\S_USAF021001').GetValue('Version')
+$ACCMVer = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine',$rComp.name).OpenSubKey('SOFTWARE\WOW6432Node\Network Associates\ePolicy Orchestrator\Application Plugins\').GetValue('Version')
 $EPOSer = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine',$rComp.name).OpenSubKey('SOFTWARE\WOW6432Node\Network Associates\epolicy orchestrator\agent').GetValue('eposerverlist') -split (";") | Select-Object -First 1
 #$EPOSer = (invoke-command -ComputerName $computername -ScriptBlock {Get-ItemProperty 'HKLM:\SOFTWARE\WOW6432Node\Network Associates\epolicy orchestrator\agent' -Name eposerverlist}).eposerverlist -split (";") | Select-Object -First 1
 
@@ -1329,7 +1329,7 @@ the password change (exactly) and
 click OK.
 
 Example:
-USAF_Admin
+Admin
 
 2. In the second popup enter the new
 password and click OK. Make sure the
@@ -2046,7 +2046,7 @@ if (!($computername -like "*.*.*.*")){
 $stBar1.text = "Pinging " + $computername.ToUpper()
 if (Test-Connection $Computername -quiet -count 1)
 {
-    $ExemptUsers = "SDC_Admin", "Administrator", "USAF_Admin", "Public", "Default", "ACE_Admin"
+    $ExemptUsers = "SDC_Admin", "Administrator", "Public", "Default", "ACE_Admin"
     $stBar1.text = "Requesting number of days..."
     $Days = ProInputBox
     [System.Windows.Forms.Cursor]::Current = 'WaitCursor'
@@ -6135,7 +6135,7 @@ if (Test-Connection $Computername -quiet -count 1)
     Else {
         if (Test-Path "\\$computername\C$\Windows\Temps\*") {Remove-Item -Force "\\$computername\C$\Windows\Temps\*" -Recurse}
         $stBar1.text = "Copying the SCCM Script from the DC to " + $computername.ToUpper()
-        Copy-Item -Path "\\area52.afnoapps.usaf.mil\SYSVOL\AREA52.AFNOAPPS.USAF.MIL\Policies\{50DB100A-6FC0-423E-9D36-2B3252A638FB}\Machine\Scripts\Startup\SCCMCBScript.ps1" -Recurse -Destination "\\$computername\C$\Windows\Temps\" -Force -ErrorAction SilentlyContinue
+        Copy-Item -Path "\\filepathforSCCMScript" -Recurse -Destination "\\$computername\C$\Windows\Temps\" -Force -ErrorAction SilentlyContinue
         $TestFileCopy = Test-Path -Path "\\$computername\C$\Windows\Temps\SCCMCBScript.ps1" # Test if the file was successfully copied to the remote workstation.
             If ($TestFileCopy -eq $True) { # If the file was copied, then perform the installation.
                 $stBar1.text = "Running the SCCM Script on " + $computername.ToUpper()
@@ -7019,7 +7019,7 @@ $PCData = foreach ($PC in $ComputerName) {
             catch{$NIPS = ""}
         try {$PolicyAgent = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine',"$PC").OpenSubKey('SOFTWARE\WOW6432Node\Network Associates\ePolicy Orchestrator\Application Plugins\PHCONTEN6000').GetValue('Version')}
             catch{$PolicyAgent = ""}
-        try {$ACCMVer = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine',"$PC").OpenSubKey('SOFTWARE\WOW6432Node\Network Associates\ePolicy Orchestrator\Application Plugins\S_USAF021001').GetValue('Version')}
+        try {$ACCMVer = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine',"$PC").OpenSubKey('SOFTWARE\WOW6432Node\Network Associates\ePolicy Orchestrator\Application Plugins\').GetValue('Version')}
             catch{$ACCMVer = ""}
         try {$EPOSer = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine',"$PC").OpenSubKey('SOFTWARE\WOW6432Node\Network Associates\epolicy orchestrator\agent').GetValue('eposerverlist') -split (";") | Select-Object -First 1}
             catch {$EPOSer = ""}
