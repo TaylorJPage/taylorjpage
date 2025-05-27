@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Checkout') {
+      steps {
+        git 'https://github.com/taylorjpage/taylorjpage.git'
+      }
+    }
+
+    stage('Provision with Ansible') {
+      steps {
+        sh 'ansible-playbook -i ansible/inventory/ec2_hosts.ini ansible/playbook.yml'
+      }
+    }
+  }
+}

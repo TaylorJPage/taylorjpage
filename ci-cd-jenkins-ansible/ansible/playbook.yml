@@ -1,0 +1,6 @@
+---
+- name: Provision Web Server
+  hosts: web
+  become: true
+  roles:
+    - webserver

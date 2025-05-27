@@ -1,0 +1,25 @@
+- name: Provision EC2 instance using AWS
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+    - name: Launch EC2 instance
+      ec2:
+        key_name: my-key
+        region: us-east-1
+        instance_type: t3.medium
+        image: ami-0c02fb55956c7d316  # Amazon Linux 2
+        wait: yes
+        group: webserver-sg
+        count: 1
+        instance_tags:
+          Name: DevSecOpsNode
+        vpc_subnet_id: subnet-xxxxxxx
+        assign_public_ip: yes
+      register: ec2
+
+    - name: Add new instance to host group
+      add_host:
+        hostname: "{{ item.public_ip }}"
+        groupname: launched
+      loop: "{{ ec2.instances }}"

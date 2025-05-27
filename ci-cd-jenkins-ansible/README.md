@@ -1,3 +1,13 @@
-# 🔄 CI/CD Pipeline with Jenkins & Ansible
+# ⚙️ CI/CD Pipeline: Jenkins + Ansible
 
-A project that demonstrates deploying a sample application using Jenkins and Ansible to multiple environments (dev, staging, production)...
+This project demonstrates a CI/CD flow using:
+
+- Jenkins pipeline (Jenkinsfile)
+- Ansible provisioning of EC2
+- Basic webserver deployment with Nginx
+
+## 🔧 How to Use
+
+1. Ensure Jenkins has the Ansible plugin and SSH credentials
+2. Set your `ec2_hosts.ini` file with your EC2 IP and SSH key
+3. Run the Jenkins pipeline or use `scripts/deploy.sh` locally

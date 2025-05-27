@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  repository: your-dockerhub-username/devsecops-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+env:
+  SECRET_NAME: myapp/devsecret
+  AWS_REGION: us-east-1
+
+resources: {}
